@@ -1,0 +1,12 @@
+color pallets used:
+#000000
+#3D0000
+#950101
+#FF0000 (dark to red)
+
+genre ids of movies: https://www.themoviedb.org/talk/5daf6eb0ae36680011d7e6ee
+
+trending movies day: https://api.themoviedb.org/3/trending/movie/day?api_key=426ad50566e0bf45036524c2248d1cca
+
+trending movies week: https://api.themoviedb.org/3/trending/movie/week?api_key=426ad50566e0bf45036524c2248d1cca
+
