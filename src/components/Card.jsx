@@ -1,12 +1,17 @@
 import React from "react";
 
-function Card() {
+function Card({ name, date, link, movieid }) {
   return (
-    <div className="h-60 p-1 border-b-2 border-purple-600 shadow-lg shadow-purple-600">
-      <div className="w-36  mb-2 h-40 rounded-md bg-gray-600 hover:scale-105 border-2 border-purple-600">
+    <div className="w-40 h-80 p-1 rounded-md border border-purple-600 shadow-md shadow-purple-600 ">
+      <div className=" border-b border-purple-600" id={movieid}>
+        <img
+          src={link}
+          alt="movie_poster"
+          className="w-40 h-60 object-cover rounded-md border-2 hover:scale-105 transition-transform cursor-pointer"
+        />
       </div>
-      <h2 className="text-white font-semibold">Movie</h2>
-      <h2 className="text-white">Date-of-Release</h2>
+      <h2 className="text-white font-semibold">{name}</h2>
+      <h2 className="text-white">{date.split("-").reverse().join("-")}</h2>
     </div>
   );
 }

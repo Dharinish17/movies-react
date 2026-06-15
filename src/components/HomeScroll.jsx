@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./Card";
+import Link from "./Link";
+import ak from "../api.txt?raw";
 
-function HomeScroll({needBtn, heading}) {
+function HomeScroll({ needBtn, heading }) {
   const [selected, setSelected] = useState("today");
+//   const res= Link({heading}, selected)
+
   return (
     <div className="p-4 mb-4">
       <h2 className="text-3xl text-white font-bold mb-2 md:inline-block md:mr-4">
@@ -40,21 +44,10 @@ function HomeScroll({needBtn, heading}) {
           </div>
         </label>
       </div>
-      
+
       <div className="overflow-x-auto mt-2 scrollbar scrollbar-thumb-gray-500 scrollbar-thin scrollbar-track-transparent">
         <div className="flex w-max gap-4 p-1">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Link heading={heading} selected={selected}/>
         </div>
       </div>
     </div>
