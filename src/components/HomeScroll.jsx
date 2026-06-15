@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Card from "./Card";
 
-function HomeScroll({ needBtn }) {
+function HomeScroll({needBtn, heading}) {
   const [selected, setSelected] = useState("today");
   return (
     <div className="p-4 mb-4">
       <h2 className="text-3xl text-white font-bold mb-2 md:inline-block md:mr-4">
-        Tredning
+        {heading}
       </h2>
       <div className={`${needBtn ? "inline-block" : "hidden"}`}>
         <label className="inline-block w-fit rounded-xl cursor-pointer">

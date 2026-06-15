@@ -10,8 +10,11 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Navbar />
     <Hero />
-    <HomeScroll needBtn={true}/>
-    <HomeScroll />
+    <HomeScroll needBtn={true} heading="Trending"/>
+    <HomeScroll heading="Popular"/>
+    <HomeScroll heading="Top Rated"/>
+    <HomeScroll heading="Upcoming"/>
+    <HomeScroll heading="Now Playing"/>
     <App />
   </StrictMode>,
 )
