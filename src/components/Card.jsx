@@ -6,7 +6,7 @@ function Card({ name, date, link, movieid }) {
   const navigate= useNavigate();
 
   return (
-    <div className="w-40 h-80 p-1 rounded-md border border-purple-600 shadow-md shadow-purple-600"
+    <div className="w-40 h-80 p-1 rounded-md border border-purple-600 shadow-lg shadow-purple-600"
       onClick={()=>{
         setInfo((prev)=> !prev);
         navigate(`/movieDetails/${movieid}`);
