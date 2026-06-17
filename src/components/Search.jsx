@@ -27,6 +27,7 @@ function Search({ type = "Movies" }) {
     <div className="flex w-full justify-center p-2">
       <input
         type="search"
+        name="movie"
         className="bg-white w-10/12 md:w-11/12 text-gray-800 p-1 rounded-l-sm focus:outline-0 md:bg-amber-200 lg:bg-red-600"
         placeholder={`Search ${type}`}
         onKeyDown={(e) => {
@@ -40,6 +41,7 @@ function Search({ type = "Movies" }) {
       />
       <input
         type="button"
+        name="searchbtn"
         value="Search"
         className="bg-gray-800 p-1 rounded-r-sm hover:bg-gray-900 cursor-pointer"
         onClick={(e) => {
