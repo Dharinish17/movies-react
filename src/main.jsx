@@ -12,6 +12,7 @@ const router= createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
       <Route path='' element={<App />} />
+      <Route path="search/:movieName" element={<SearchRes />} />
     </Route>
   )
 )
