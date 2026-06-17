@@ -20,7 +20,7 @@ function MovieDetails() {
           <div className="w-full flex flex-row justify-center lg:justify-center lg:w-fit">
             <img
               src={`https://image.tmdb.org/t/p/w780${movieData.poster_path}`}
-              className="rounded-md w-72 shadow-lg md:shadow-2xl mb-3 md:mb-5 shadow-purple-600"
+              className="rounded-md w-72 shadow-xl md:shadow-2xl mb-3 md:mb-5 shadow-purple-600"
               alt="movie_poster"
             />
           </div>
