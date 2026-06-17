@@ -11,7 +11,7 @@ function Card({ name, date, link, movieid }) {
         />
       </div>
       <h2 className="text-white font-semibold">{name}</h2>
-      <h2 className="text-white">{date.split("-").reverse().join("-")}</h2>
+      <h2 className="text-white">{date!="" ? date.split("-").reverse().join("-") : "Not-Specified"}</h2>
     </div>
   );
 }
