@@ -1,0 +1,27 @@
+import React, { useEffect, useState } from "react";
+import ak from "../api.txt?raw";
+import Card from "./Card";
+import PersonCard from "./PersonCard";
+
+function Person() {
+    const [data, setData]= useState([]);
+    useEffect(()=> {
+        fetch(`https://api.themoviedb.org/3/person/popular?api_key=${ak}`)
+        .then((response)=> response.json())
+        .then((data)=> setData(data.results))
+        .catch((err)=> console.log(err));
+    },[])
+
+    return (
+    <div className="p-4 mb-4">
+      <h1 className="text-white text-3xl font-bold mb-2">Popular People</h1>
+      <div className="flex flex-row flex-wrap justify-center md:justify-between border">
+        {data.map((person)=> (
+            <PersonCard name={person.name} link={`https://image.tmdb.org/t/p/w780${person.profile_path}`} personId={person.id} knownFor={person.known_for} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Person;

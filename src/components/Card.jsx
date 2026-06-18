@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Card({ name, date, link, movieid }) {
+function Card({ name, date="", link, movieid }) {
   const [info, setInfo]= useState(false);
   const navigate= useNavigate();
 
@@ -19,7 +19,7 @@ function Card({ name, date, link, movieid }) {
           className="w-40 h-60 object-cover rounded-md border-2 hover:scale-105 transition-transform cursor-pointer"
         />
       </div>
-      <h2 className={`text-white font-semibold`} title={name}>{name.length>32 ? `${name.slice(0,32)+"..."}` : name}</h2>
+      <h2 className={`text-white font-semibold`} title={name}>{name.length>30 ? `${name.slice(0,30)+"..."}` : name}</h2>
       <h2 className="text-white">{date!="" ? date.split("-").reverse().join("-") : "Not-Specified"}</h2>
       <p className="text-white">{info}</p>
     </div>
