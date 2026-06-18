@@ -2,11 +2,22 @@ import React, {useEffect, useState} from "react";
 import film from "../assets/film.png";
 import Search from "./Search";
 import Hero from "./Hero";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [type, setType]= useState("Movies");
   const navigate= useNavigate();
+  const location= useLocation();
+
+  useEffect(()=> {
+    if(location.pathname=== "/")
+    {
+      setType("Movies")
+    }else if(location.pathname=== "/person"){
+      setType("Person")
+    }
+  }, [location.pathname]);
+
   useEffect(()=> {
     if(type=== "Movies")
     {
@@ -14,7 +25,7 @@ function Navbar() {
     }else if(type=== "Person"){
       navigate('/person')
     }
-  }, [type]);
+  }, [type, navigate]);
 
   return (
     <>
