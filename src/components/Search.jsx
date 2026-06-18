@@ -28,7 +28,7 @@ function Search({ type = "Movies" }) {
       <input
         type="search"
         name="movie"
-        className="bg-white w-10/12 md:w-11/12 text-gray-800 p-1 rounded-l-sm focus:outline-0 md:bg-amber-200 lg:bg-red-600"
+        className="bg-white w-10/12 md:w-11/12 text-gray-800 p-1 rounded-l-sm focus:outline-0"
         placeholder={`Search ${type}`}
         onKeyDown={(e) => {
           if (e.key === "Enter" && searchRef.current.value.trim() !="") {
