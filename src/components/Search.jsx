@@ -33,7 +33,7 @@ function Search({ type = "Movies" }) {
         onKeyDown={(e) => {
           if (e.key === "Enter" && searchRef.current.value.trim() !="") {
             // setQuery(e.target.value);
-            navigate(`/search/${searchRef.current.value}`);
+            navigate(`/search/${type}/${searchRef.current.value}`);
             searchRef.current.value = "";
           }
         }}
@@ -47,7 +47,7 @@ function Search({ type = "Movies" }) {
         onClick={(e) => {
           // setQuery(searchRef.current.value);
           if(searchRef.current.value.trim() === ""){return}
-          navigate(`/search/${searchRef.current.value}`);
+          navigate(`/search/${type}/${searchRef.current.value}`);
           searchRef.current.value = "";
         }}
       />

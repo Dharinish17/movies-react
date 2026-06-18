@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { data, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ak from "../api.txt?raw";
 import Card from "./Card";
+import PersonCard from "./PersonCard";
 
 function SearchRes() {
-  const { movieName } = useParams();
+  const { name, type } = useParams();
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    if (movieName.trim() === "") {
+    if (name.trim() === "") {
       return;
     }
 
-    const movie = movieName.trim();
+    const movie = name.trim();
     fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${ak}&query=${encodeURIComponent(movie)}`,
+      type==="Movies"? `https://api.themoviedb.org/3/search/movie?api_key=${ak}&query=${encodeURIComponent(movie)}` : `https://api.themoviedb.org/3/search/person?api_key=${ak}&query=${encodeURIComponent(movie)}`
     )
       .then((Response) => Response.json())
       .then((data) => {
@@ -23,14 +24,15 @@ function SearchRes() {
       .catch((err) => {
         console.log(err);
       });
-  }, [movieName]);
+  }, [name, type]);
 
   return (
     <div className="mb-4 p-4">
-      <h2 className="text-white text-3xl font-bold mb-2">{`Search for ${movieName}:`}</h2>
+      <h2 className="text-white text-3xl font-bold mb-2">{`Search for ${name}:`}</h2>
 
       {data.length > 0 ? (
-        <div className="overflow-x-auto mt-2 scrollbar scrollbar-thumb-gray-500 scrollbar-thin scrollbar-track-transparent">
+        type==="Movies" ?
+        (<div className="overflow-x-auto mt-2 scrollbar scrollbar-thumb-gray-500 scrollbar-thin scrollbar-track-transparent">
           <div className="flex w-max gap-4 p-1">
             {data.map((movie) => (
               <Card
@@ -41,9 +43,15 @@ function SearchRes() {
               />
             ))}
           </div>
-        </div>
+        </div>)
+        :
+        (<div className="flex flex-row flex-wrap justify-center md:justify-between border">
+        {data.map((person)=> (
+            <PersonCard name={person.name} link={`https://image.tmdb.org/t/p/w780${person.profile_path}`} personId={person.id} knownFor={person.known_for} />
+        ))}
+      </div>)
       ) : (
-        <div className="text-red-500 text-2xl">{`Oops! We couldn't find any movies matching "${movieName}".`}</div>
+        <div className="text-red-500 text-2xl">{`Oops! We couldn't find any results matching "${name}".`}</div>
       )}
     </div>
   );
