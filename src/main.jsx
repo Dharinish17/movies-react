@@ -8,6 +8,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, Router, RouterPro
 import Layout from './Layout.jsx'
 import SearchRes from './components/SearchRes.jsx'
 import MovieDetails from './components/MovieDetails.jsx'
+import ErrorRoute from './components/ErrorRoute.jsx'
 
 const router= createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +16,9 @@ const router= createBrowserRouter(
       <Route path='' element={<App />} />
       <Route path="search/:movieName" element={<SearchRes />} />
       <Route path='movieDetails/:movieId' element={<MovieDetails />} />
+
+      
+      <Route path='*' element={<ErrorRoute />} />
     </Route>
   )
 )
