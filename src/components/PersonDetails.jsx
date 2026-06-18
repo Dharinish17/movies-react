@@ -57,14 +57,14 @@ function PersonDetails() {
           </h2>
         <div className="overflow-x-auto scrollbar scrollbar-thumb-gray-500 scrollbar-thin scrollbar-track-transparent">
           <div className="flex w-max gap-4 p-1">
-            {movie.map((m) => (
+            {movie.length>0 ? (movie.map((m) => (
               <Card
                 name={m.title}
                 date={m.release_date}
                 link={`https://image.tmdb.org/t/p/w780${m.poster_path}`}
                 movieid={m.id}
               />
-            ))}
+            ))) : <p className="text-gray-400 text-lg md:text-2xl">No notable works found.</p>}
           </div>
         </div>
         </div>
