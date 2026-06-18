@@ -43,10 +43,10 @@ function PersonDetails() {
             <h2 className="text-amber-200 font-bold text-2xl md:text-4xl">
               {data?.name}
             </h2>
-            <p className="text-white font-bold text-2xl md:text-4xl">
+            <p className="text-white mb-2 font-bold text-2xl md:text-4xl">
               {`Birth: ${data?.birthday !== "" ? data.birthday?.split("-").reverse().join("-") : "Not-Specified"}`}
             </p>
-            <i className="text-gray-500 font-medium md:text-xl">
+            <i className="text-gray-400 font-medium md:text-xl">
               {data?.biography || "Biography not available."}
             </i>
           </div>
