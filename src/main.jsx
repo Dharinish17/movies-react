@@ -10,6 +10,7 @@ import SearchRes from './components/SearchRes.jsx'
 import MovieDetails from './components/MovieDetails.jsx'
 import ErrorRoute from './components/ErrorRoute.jsx'
 import Person from './components/Person.jsx'
+import PersonDetails from './components/PersonDetails.jsx'
 
 const router= createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router= createBrowserRouter(
       <Route path="search/:movieName" element={<SearchRes />} />
       <Route path='movieDetails/:movieId' element={<MovieDetails />} />
       <Route path='person' element={<Person />} />
+      <Route path='personDetails/:personId' element={<PersonDetails />} />
 
       <Route path='*' element={<ErrorRoute />} />
     </Route>
