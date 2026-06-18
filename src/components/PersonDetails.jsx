@@ -40,7 +40,7 @@ function PersonDetails() {
           </div>
 
           <div className="md:w-fit">
-            <h2 className="text-white font-bold text-2xl md:text-4xl">
+            <h2 className="text-amber-200 font-bold text-2xl md:text-4xl">
               {data?.name}
             </h2>
             <p className="text-white font-bold text-2xl md:text-4xl">
@@ -51,10 +51,11 @@ function PersonDetails() {
             </i>
           </div>
         </div>
-        <div className="overflow-x-auto mt-2 scrollbar scrollbar-thumb-gray-500 scrollbar-thin scrollbar-track-transparent">
+        <div className="mt-3">
           <h2 className="text-white font-bold text-2xl mb-1 md:text-4xl">
-            Movies Made
+            🎬 Notable Works
           </h2>
+        <div className="overflow-x-auto scrollbar scrollbar-thumb-gray-500 scrollbar-thin scrollbar-track-transparent">
           <div className="flex w-max gap-4 p-1">
             {movie.map((m) => (
               <Card
@@ -65,6 +66,7 @@ function PersonDetails() {
               />
             ))}
           </div>
+        </div>
         </div>
       </div>
     </div>
