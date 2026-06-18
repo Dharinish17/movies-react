@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import no_img from "../assets/no_img.png";
 
 function PersonCard({name, link, personId, knownFor}) {
   const navigate= useNavigate();
@@ -12,7 +13,7 @@ function PersonCard({name, link, personId, knownFor}) {
     >
         <div className="border-b border-purple-600" id={personId}>
         <img
-          src={link}
+          src={link.includes(null) ? no_img : link}
           alt="person_Img"
           className="w-50 h-60 object-cover rounded-md border-2 hover:scale-105 cursor-pointer"
         />

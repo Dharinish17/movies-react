@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import no_img from "../assets/no_img.png";
 
 function Card({ name, date="", link, movieid }) {
   const [info, setInfo]= useState(false);
@@ -14,7 +15,7 @@ function Card({ name, date="", link, movieid }) {
     >
       <div className=" border-b border-purple-600" id={movieid}>
         <img
-          src={link}
+          src={link.includes(null) ? no_img : link}
           alt="movie_poster"
           className="w-40 h-60 object-cover rounded-md border-2 hover:scale-105 transition-transform cursor-pointer"
         />
