@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import ak from "../api.txt?raw";
+import Similar from "./Similar";
 
 function MovieDetails() {
   const { movieId } = useParams();
@@ -13,7 +14,9 @@ function MovieDetails() {
   }, [movieId]);
 
   return (
-    <div className="mb-4 p-4">
+    <>
+    <div className="p-4">
+    <div className="mb-4">
       <h2 className="text-amber-200 text-3xl font-bold mb-2">{`${movieData.title}`}</h2>
       <div className="rounded-md border border-purple-600 p-4">
         <div className="lg:flex lg:gap-10">
@@ -93,6 +96,10 @@ function MovieDetails() {
         </div>
       </div>
     </div>
+
+    <Similar movieId={movieId} movieName={movieData.title}/>
+    </div>
+    </>
   );
 }
 
