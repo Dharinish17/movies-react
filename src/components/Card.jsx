@@ -6,7 +6,7 @@ function Card({ name, date, link, movieid }) {
   const navigate= useNavigate();
 
   return (
-    <div className="w-40 h-80 p-1 rounded-md border border-purple-600 shadow-lg shadow-purple-600"
+    <div className="w-40 h-80 p-1 rounded-md border border-purple-600 shadow-lg shadow-purple-600 cursor-pointer"
       onClick={()=>{
         setInfo((prev)=> !prev);
         navigate(`/movieDetails/${movieid}`);
@@ -19,7 +19,7 @@ function Card({ name, date, link, movieid }) {
           className="w-40 h-60 object-cover rounded-md border-2 hover:scale-105 transition-transform cursor-pointer"
         />
       </div>
-      <h2 className="text-white font-semibold">{name}</h2>
+      <h2 className={`text-white font-semibold`} title={name}>{name.length>32 ? `${name.slice(0,32)+"..."}` : name}</h2>
       <h2 className="text-white">{date!="" ? date.split("-").reverse().join("-") : "Not-Specified"}</h2>
       <p className="text-white">{info}</p>
     </div>
