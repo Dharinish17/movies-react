@@ -45,7 +45,7 @@ function SearchRes() {
           </div>
         </div>)
         :
-        (<div className="flex flex-row flex-wrap justify-center md:justify-between border">
+        (<div className="flex flex-row flex-wrap justify-center md:justify-normal border">
         {data.map((person)=> (
             <PersonCard name={person.name} link={`https://image.tmdb.org/t/p/w780${person.profile_path}`} personId={person.id} knownFor={person.known_for} />
         ))}

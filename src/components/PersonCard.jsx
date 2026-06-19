@@ -6,7 +6,7 @@ function PersonCard({name, link, personId, knownFor}) {
   const navigate= useNavigate();
 
   return (
-    <div className='w-50 h-80 p-1 mr-1 mb-6 rounded-md border border-purple-600 shadow-lg shadow-purple-600 cursor-pointer'
+    <div className='w-50 h-80 p-1 mr-4 mb-6 rounded-md border border-purple-600 shadow-lg shadow-purple-600 cursor-pointer'
         onClick={()=> {
             navigate(`/personDetails/${personId}`)
         }}
