@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ak from "../api.txt?raw";
 import Card from "./Card";
 
 function PersonDetails() {
   const { personId } = useParams();
+  const ak = import.meta.env.VITE_TMDB_API_KEY;
   const [data, setData] = useState({});
   const [movie, setMovie] = useState([]);
 

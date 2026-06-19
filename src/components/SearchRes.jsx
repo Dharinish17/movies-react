@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ak from "../api.txt?raw";
 import Card from "./Card";
 import PersonCard from "./PersonCard";
 
 function SearchRes() {
   const { name, type } = useParams();
   const [data, setData] = useState([]);
+  const ak = import.meta.env.VITE_TMDB_API_KEY;
 
   useEffect(() => {
     if (name.trim() === "") {

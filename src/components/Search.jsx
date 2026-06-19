@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import ak from "../api.txt?raw";
 import { useNavigate } from "react-router-dom";
 
 function Search({ type = "Movies" }) {
   // const [query, setQuery] = useState("");
   // const [data, setData] = useState([]);
+  const ak = import.meta.env.VITE_TMDB_API_KEY;
   const searchRef = useRef();
   const navigate = useNavigate();
 

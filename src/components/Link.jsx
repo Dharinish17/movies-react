@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
-import ak from "../api.txt?raw";
 
 function Link({heading, selected}) {
   const [res, setRes] = useState([]);
+  const ak = import.meta.env.VITE_TMDB_API_KEY;
   let link= "";
 
   if (heading === "Trending") {

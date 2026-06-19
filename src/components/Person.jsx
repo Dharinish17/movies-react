@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import ak from "../api.txt?raw";
 import Card from "./Card";
 import PersonCard from "./PersonCard";
 
 function Person() {
     const [data, setData]= useState([]);
+    const ak = import.meta.env.VITE_TMDB_API_KEY;
+
     useEffect(()=> {
         fetch(`https://api.themoviedb.org/3/person/popular?api_key=${ak}`)
         .then((response)=> response.json())

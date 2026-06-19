@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import ak from "../api.txt?raw";
 import Similar from "./Similar";
 
 function MovieDetails() {
   const { movieId } = useParams();
+  const ak = import.meta.env.VITE_TMDB_API_KEY;
   const [movieData, setMovieData] = useState({});
 
   useEffect(() => {

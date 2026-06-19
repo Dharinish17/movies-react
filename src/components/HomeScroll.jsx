@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import Link from "./Link";
-import ak from "../api.txt?raw";
 
 function HomeScroll({ needBtn, heading }) {
+  const ak = import.meta.env.VITE_TMDB_API_KEY;
   const [selected, setSelected] = useState("today");
 //   const res= Link({heading}, selected)
 
