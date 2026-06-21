@@ -28,7 +28,7 @@ function SearchRes() {
 
   return (
     <div className="mb-4 p-4">
-      <h2 className="text-white text-3xl font-bold mb-2">{`Search for ${name}:`}</h2>
+      <h2 className="text-white text-3xl font-bold mb-2 dark:text-black">{`Search for ${name}:`}</h2>
 
       {data.length > 0 ? (
         type==="Movies" ?
@@ -45,7 +45,7 @@ function SearchRes() {
           </div>
         </div>)
         :
-        (<div className="flex flex-row flex-wrap justify-center md:justify-normal border">
+        (<div className="flex flex-row flex-wrap justify-center md:justify-normal">
         {data.map((person)=> (
             <PersonCard name={person.name} link={`https://image.tmdb.org/t/p/w780${person.profile_path}`} personId={person.id} knownFor={person.known_for} />
         ))}

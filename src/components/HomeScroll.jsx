@@ -9,7 +9,7 @@ function HomeScroll({ needBtn, heading }) {
 
   return (
     <div className="p-4 mb-4">
-      <h2 className="text-3xl text-white font-bold mb-2 md:inline-block md:mr-4">
+      <h2 className="text-3xl text-white font-bold mb-2 md:inline-block md:mr-4 dark:text-black">
         {heading}
       </h2>
       <div className={`${needBtn ? "inline-block" : "hidden"}`}>
@@ -22,7 +22,7 @@ function HomeScroll({ needBtn, heading }) {
           />
           <div
             onClick={() => setSelected("today")}
-            className={`px-3 py-2 rounded-xl rounded-r-none font-bold border border-amber-200 border-r-0 ${selected == "today" ? "bg-amber-200 text-black" : "bg-none text-white"}`}
+            className={`px-3 py-2 rounded-xl rounded-r-none font-bold border border-amber-200 dark:border-amber-500 border-r-0 dark:text-black ${selected == "today" ? "bg-amber-200 dark:bg-amber-500 text-black" : "bg-none text-white"}`}
           >
             Today
           </div>
@@ -38,7 +38,7 @@ function HomeScroll({ needBtn, heading }) {
 
           <div
             onClick={() => setSelected("week")}
-            className={`px-3 py-2 rounded-xl rounded-l-none font-bold border border-amber-200 border-l-0 ${selected == "week" ? "bg-amber-200 text-black" : "bg-none text-white"}`}
+            className={`px-3 py-2 rounded-xl rounded-l-none dark:text-black font-bold border border-amber-200 dark:border-amber-500 border-l-0 ${selected == "week" ? "bg-amber-200 dark:bg-amber-500 text-black" : "bg-none text-white"}`}
           >
             This Week
           </div>

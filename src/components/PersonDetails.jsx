@@ -26,7 +26,7 @@ function PersonDetails() {
 
   return (
     <div className="p-4 mb-4 w-full">
-      <h2 className="text-3xl text-white font-bold mb-2">
+      <h2 className="text-3xl text-white font-bold mb-2 dark:text-black">
         {data?.name}
       </h2>
       <div className="border w-full border-purple-600 rounded-md p-4">
@@ -40,10 +40,10 @@ function PersonDetails() {
           </div>
 
           <div className="md:w-fit">
-            <h2 className="text-amber-200 font-bold text-2xl md:text-4xl">
+            <h2 className="text-amber-200 font-bold text-2xl md:text-4xl dark:text-amber-500">
               {data?.name}
             </h2>
-            <p className="text-white mb-2 font-bold text-2xl md:text-4xl">
+            <p className="text-white mb-2 font-bold text-2xl md:text-4xl dark:text-black">
               {`Birth: ${data?.birthday !== "" ? data.birthday?.split("-").reverse().join("-") : "Not-Specified"}`}
             </p>
             <i className="text-gray-400 font-medium md:text-xl">
@@ -52,7 +52,7 @@ function PersonDetails() {
           </div>
         </div>
         <div className="mt-3">
-          <h2 className="text-white font-bold text-2xl mb-1 md:text-4xl">
+          <h2 className="text-white font-bold text-2xl mb-1 md:text-4xl dark:text-black">
             🎬 Notable Works
           </h2>
         <div className="overflow-x-auto scrollbar scrollbar-thumb-gray-500 scrollbar-thin scrollbar-track-transparent">
