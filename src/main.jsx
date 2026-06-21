@@ -11,6 +11,7 @@ import MovieDetails from './components/MovieDetails.jsx'
 import ErrorRoute from './components/ErrorRoute.jsx'
 import Person from './components/Person.jsx'
 import PersonDetails from './components/PersonDetails.jsx'
+import { Theme } from "./contexts/Theme.jsx";
 
 const router= createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +29,8 @@ const router= createBrowserRouter(
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />    
-  </StrictMode>,
+  <Theme>
+    <RouterProvider router={router} />
+  </Theme>      
+  </StrictMode>
 )
