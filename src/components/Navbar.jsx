@@ -3,6 +3,7 @@ import film from "../assets/film.png";
 import Search from "./Search";
 import Hero from "./Hero";
 import { useLocation, useNavigate } from "react-router-dom";
+import ThemeBtn from "./ThemeBtn";
 
 function Navbar() {
   const [type, setType]= useState("Movies");
@@ -35,6 +36,7 @@ function Navbar() {
         setType(type==='Movies'? 'Person': 'Movies')
       }} className="bg-amber-200 p-1 rounded-md border-0 text-black font-bold hover:scale-105 cursor-pointer" />
       <Search type={type} />
+      <ThemeBtn />
     </div>
     <Hero type= {type} />
     </>
